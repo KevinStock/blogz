@@ -70,3 +70,7 @@ nav ul li {
 nav #user-account {
     float: right;
 }
+
+nav .login-controls {
+    float: right;
+}

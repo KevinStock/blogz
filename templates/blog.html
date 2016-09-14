@@ -13,7 +13,11 @@
 {% endfor %}
 
 {% if prev_page %}
-<a href="/blog?page={{ prev_page }}">&lt; prev</a>
+    {% if username: %}
+    <a href="/blog/{{ username }}?page={{ prev_page }}">&lt; prev</a>
+    {% else: %}
+    <a href="/blog?page={{ prev_page }}">&lt; prev</a>
+    {% endif %}
 {% endif %}
 
 {% if prev_page and next_page %}
@@ -22,7 +26,7 @@
 
 {% if next_page %}
     {% if username: %}
-<a href="/blog/{{ username }}?page={{ next_page }}">next &gt;</a>
+    <a href="/blog/{{ username }}?page={{ next_page }}">next &gt;</a>
     {% else: %}
     <a href="/blog?page={{ next_page }}">next &gt;</a>
     {% endif %}

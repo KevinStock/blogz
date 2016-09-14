@@ -21,7 +21,11 @@
 {% endif %}
 
 {% if next_page %}
-<a href="/blog?page={{ next_page }}">next &gt;</a>
+    {% if username: %}
+<a href="/blog/{{ username }}?page={{ next_page }}">next &gt;</a>
+    {% else: %}
+    <a href="/blog?page={{ next_page }}">next &gt;</a>
+    {% endif %}
 {% endif %}
 
 {% endblock %}

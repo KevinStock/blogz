@@ -108,6 +108,7 @@ class BlogIndexHandler(BlogHandler):
         # render the page
         t = jinja_env.get_template("blog.html")
         response = t.render(
+                    username=username,
                     posts=posts,
                     page=page,
                     page_size=self.page_size,
